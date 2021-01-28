@@ -58,6 +58,7 @@
 
                       @isset($ac->bobot)
                       <script>document.getElementById('alert-bobot-null').style.display="none";</script>
+                      <script>document.getElementById('hide-skala-saaty').style.display="none";</script>
                         {{$ac->bobot}}
                       @endisset
                     </td>
@@ -66,7 +67,6 @@
                   @endforeach
               </tbody>
             </table>
-            <p> | 𝜆𝑚𝑎𝑥 = | CI = | CR = |</p> 
           </div>
           <!-- /.box-body -->
         </div>
@@ -74,7 +74,9 @@
   </div>
 
   <div class="col-md-6">
-    <div class="box box-danger box-solid">
+    <div style="display:<?php if (isset($analisaCriteria->first()->bobot)) {
+      echo "none";
+    } ?>;" class="box box-danger box-solid">
       <div class="box-header">
         <h3 class="box-title">Matriks Perbandingan Berpasangan Antar Kriteria (Skala Saaty)</h3>
       </div>
@@ -117,7 +119,9 @@
         </div>
     </div>
 
-    <div class="box box-danger box-solid">
+    <div style="display:<?php if (isset($analisaCriteria->first()->bobot)) {
+      echo "none";
+    } ?>;" class="box box-danger box-solid">
       <div class="box-header">
         <h3 class="box-title">Tabel Skala Saaty</h3>
       </div>
@@ -167,6 +171,45 @@
           <!-- /.box-body -->
         </div>
     </div>
+
+
+    <div style="display:<?php if (!isset($analisaCriteria->first()->bobot)) {
+      echo "none";
+    } ?>;" class="alert alert-info alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <h4><i class="icon fa fa-info"></i>Info!</h4>
+      Reset Bobot untuk menganalisa ulang!
+    </div>
+
+    @if($CR<0.1)
+    <div style="display:<?php if (!isset($analisaCriteria->first()->bobot)) {
+      echo "none";
+    } ?>;" class="alert alert-success alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <h4><i class="icon fa fa-check"></i>Memenuhi syarat CR < 0,1</h4>
+      𝜆𝑚𝑎𝑥 = {{$nmax}}
+      <br>
+      CI = {{$CI}}
+      <br> 
+      CR = {{$CR}}
+      <br> 
+    </div>
+    @else
+    <div style="display:<?php if (!isset($analisaCriteria->first()->bobot)) {
+      echo "none";
+    } ?>;" class="alert alert-danger alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <h4><i class="icon fa fa-close"></i>Tidak memenuhi syarat CR < 0,1</h4>
+      𝜆𝑚𝑎𝑥 = {{$nmax}}
+      <br>
+      CI = {{$CI}}
+      <br> 
+      CR = {{$CR}}
+      <br> 
+    </div>
+    @endif
+
+
   </div>
 
 </div>

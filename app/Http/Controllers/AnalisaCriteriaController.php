@@ -16,7 +16,75 @@ class AnalisaCriteriaController extends Controller
     public function index()
     {
         $analisaCriteria = ahp_criteria::all();
-        return view('users.pages.analisaKriteria', compact('analisaCriteria'));
+
+        $k1b1 = ahp_analisa_criteria::where('first_criterias', 'C1')->where('second_criterias', 'C1')->get()->first();
+        $k1b2 = ahp_analisa_criteria::where('first_criterias', 'C2')->where('second_criterias', 'C1')->get()->first();
+        $k1b3 = ahp_analisa_criteria::where('first_criterias', 'C3')->where('second_criterias', 'C1')->get()->first();
+        $k1b4 = ahp_analisa_criteria::where('first_criterias', 'C4')->where('second_criterias', 'C1')->get()->first();
+
+        $k2b1 = ahp_analisa_criteria::where('first_criterias', 'C1')->where('second_criterias', 'C2')->get()->first();
+        $k2b2 = ahp_analisa_criteria::where('first_criterias', 'C2')->where('second_criterias', 'C2')->get()->first();
+        $k2b3 = ahp_analisa_criteria::where('first_criterias', 'C3')->where('second_criterias', 'C2')->get()->first();
+        $k2b4 = ahp_analisa_criteria::where('first_criterias', 'C4')->where('second_criterias', 'C2')->get()->first();
+
+        $k3b1 = ahp_analisa_criteria::where('first_criterias', 'C1')->where('second_criterias', 'C3')->get()->first();
+        $k3b2 = ahp_analisa_criteria::where('first_criterias', 'C2')->where('second_criterias', 'C3')->get()->first();
+        $k3b3 = ahp_analisa_criteria::where('first_criterias', 'C3')->where('second_criterias', 'C3')->get()->first();
+        $k3b4 = ahp_analisa_criteria::where('first_criterias', 'C4')->where('second_criterias', 'C3')->get()->first();
+
+        $k4b1 = ahp_analisa_criteria::where('first_criterias', 'C1')->where('second_criterias', 'C4')->get()->first();
+        $k4b2 = ahp_analisa_criteria::where('first_criterias', 'C2')->where('second_criterias', 'C4')->get()->first();
+        $k4b3 = ahp_analisa_criteria::where('first_criterias', 'C3')->where('second_criterias', 'C4')->get()->first();
+        $k4b4 = ahp_analisa_criteria::where('first_criterias', 'C4')->where('second_criterias', 'C4')->get()->first();
+
+
+        $bobotC1 = ahp_criteria::where('code_criterias', 'C1')->get()->first();
+        $bobotC2 = ahp_criteria::where('code_criterias', 'C2')->get()->first();
+        $bobotC3 = ahp_criteria::where('code_criterias', 'C3')->get()->first();
+        $bobotC4 = ahp_criteria::where('code_criterias', 'C4')->get()->first();
+
+        if (isset($k1b1)) {
+            $k1b1KaliBobotC1=$k1b1->intensitas_values*$bobotC1->bobot;
+            $k2b1KaliBobotC2=$k2b1->intensitas_values*$bobotC2->bobot;
+            $k3b1KaliBobotC3=$k3b1->intensitas_values*$bobotC3->bobot;
+            $k4b1KaliBobotC4=$k4b1->intensitas_values*$bobotC4->bobot;
+            $nmaxb1=$k1b1KaliBobotC1+$k2b1KaliBobotC2+$k3b1KaliBobotC3+$k4b1KaliBobotC4;
+
+
+            $k1b2KaliBobotC1=$k1b2->intensitas_values*$bobotC1->bobot;
+            $k2b2KaliBobotC2=$k2b2->intensitas_values*$bobotC2->bobot;
+            $k3b2KaliBobotC3=$k3b2->intensitas_values*$bobotC3->bobot;
+            $k4b2KaliBobotC4=$k4b2->intensitas_values*$bobotC4->bobot;
+            $nmaxb2=$k1b2KaliBobotC1+$k2b2KaliBobotC2+$k3b2KaliBobotC3+$k4b2KaliBobotC4;
+
+
+            $k1b3KaliBobotC1=$k1b3->intensitas_values*$bobotC1->bobot;
+            $k2b3KaliBobotC2=$k2b3->intensitas_values*$bobotC2->bobot;
+            $k3b3KaliBobotC3=$k3b3->intensitas_values*$bobotC3->bobot;
+            $k4b3KaliBobotC4=$k4b3->intensitas_values*$bobotC4->bobot;
+            $nmaxb3=$k1b3KaliBobotC1+$k2b3KaliBobotC2+$k3b3KaliBobotC3+$k4b3KaliBobotC4;
+
+
+            $k1b4KaliBobotC1=$k1b4->intensitas_values*$bobotC1->bobot;
+            $k2b4KaliBobotC2=$k2b4->intensitas_values*$bobotC2->bobot;
+            $k3b4KaliBobotC3=$k3b4->intensitas_values*$bobotC3->bobot;
+            $k4b4KaliBobotC4=$k4b4->intensitas_values*$bobotC4->bobot;
+            $nmaxb4=$k1b4KaliBobotC1+$k2b4KaliBobotC2+$k3b4KaliBobotC3+$k4b4KaliBobotC4;
+
+            $nmaxhasilbagi1 = $nmaxb1/$bobotC1->bobot; 
+            $nmaxhasilbagi2 = $nmaxb2/$bobotC2->bobot;
+            $nmaxhasilbagi3 = $nmaxb3/$bobotC3->bobot;
+            $nmaxhasilbagi4 = $nmaxb4/$bobotC4->bobot;
+            $nmax = ($nmaxhasilbagi1 + $nmaxhasilbagi2 + $nmaxhasilbagi3 + $nmaxhasilbagi4) / 4;
+            $CI = ($nmax - 4) / 3;
+            $CR = $CI / 0.8815;
+        }
+        
+
+        
+
+
+        return view('users.pages.analisaKriteria', compact('analisaCriteria', 'nmax', 'CI', 'CR'));
     }
 
     /**
