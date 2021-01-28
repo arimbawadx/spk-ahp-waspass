@@ -66,7 +66,7 @@
                   @endforeach
               </tbody>
             </table>
-            <p> | 𝜆𝑚𝑎𝑥 = | CI = | CR = </p> 
+            <p> | 𝜆𝑚𝑎𝑥 = | CI = | CR = |</p> 
           </div>
           <!-- /.box-body -->
         </div>

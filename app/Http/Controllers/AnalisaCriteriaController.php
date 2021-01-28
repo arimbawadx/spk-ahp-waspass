@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ahp_criteria;
+use App\ahp_analisa_criteria;
 
 class AnalisaCriteriaController extends Controller
 {
@@ -40,6 +41,110 @@ class AnalisaCriteriaController extends Controller
         $C2 = ($k1b2 + $k2b2 + $k3b2 + $k4b2)/4;
         $C3 = ($k1b3 + $k2b3 + $k3b3 + $k4b3)/4;
         $C4 = ($k1b4 + $k2b4 + $k3b4 + $k4b4)/4;
+
+        $storeMatriksBerpasanganK1B1 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK1B1->first_criterias = "C1";
+        $storeMatriksBerpasanganK1B1->intensitas_values = $request->k1b1;
+        $storeMatriksBerpasanganK1B1->second_criterias = "C1";
+        $storeMatriksBerpasanganK1B1->save();
+
+        $storeMatriksBerpasanganK1B2 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK1B2->first_criterias = "C2";
+        $storeMatriksBerpasanganK1B2->intensitas_values = $request->k1b2;
+        $storeMatriksBerpasanganK1B2->second_criterias = "C1";
+        $storeMatriksBerpasanganK1B2->save();
+
+        $storeMatriksBerpasanganK1B3 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK1B3->first_criterias = "C3";
+        $storeMatriksBerpasanganK1B3->intensitas_values = $request->k1b3;
+        $storeMatriksBerpasanganK1B3->second_criterias = "C1";
+        $storeMatriksBerpasanganK1B3->save();
+
+        $storeMatriksBerpasanganK1B4 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK1B4->first_criterias = "C4";
+        $storeMatriksBerpasanganK1B4->intensitas_values = $request->k1b4;
+        $storeMatriksBerpasanganK1B4->second_criterias = "C1";
+        $storeMatriksBerpasanganK1B4->save();
+
+
+
+        $storeMatriksBerpasanganK2B1 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK2B1->first_criterias = "C1";
+        $storeMatriksBerpasanganK2B1->intensitas_values = $request->k2b1;
+        $storeMatriksBerpasanganK2B1->second_criterias = "C2";
+        $storeMatriksBerpasanganK2B1->save();
+
+        $storeMatriksBerpasanganK2B2 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK2B2->first_criterias = "C2";
+        $storeMatriksBerpasanganK2B2->intensitas_values = $request->k2b2;
+        $storeMatriksBerpasanganK2B2->second_criterias = "C2";
+        $storeMatriksBerpasanganK2B2->save();
+
+        $storeMatriksBerpasanganK2B3 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK2B3->first_criterias = "C3";
+        $storeMatriksBerpasanganK2B3->intensitas_values = $request->k2b3;
+        $storeMatriksBerpasanganK2B3->second_criterias = "C2";
+        $storeMatriksBerpasanganK2B3->save();
+
+        $storeMatriksBerpasanganK2B4 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK2B4->first_criterias = "C4";
+        $storeMatriksBerpasanganK2B4->intensitas_values = $request->k2b4;
+        $storeMatriksBerpasanganK2B4->second_criterias = "C2";
+        $storeMatriksBerpasanganK2B4->save();
+
+
+
+        $storeMatriksBerpasanganK3B1 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK3B1->first_criterias = "C1";
+        $storeMatriksBerpasanganK3B1->intensitas_values = $request->k3b1;
+        $storeMatriksBerpasanganK3B1->second_criterias = "C3";
+        $storeMatriksBerpasanganK3B1->save();
+
+        $storeMatriksBerpasanganK3B2 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK3B2->first_criterias = "C2";
+        $storeMatriksBerpasanganK3B2->intensitas_values = $request->k3b2;
+        $storeMatriksBerpasanganK3B2->second_criterias = "C3";
+        $storeMatriksBerpasanganK3B2->save();
+
+        $storeMatriksBerpasanganK3B3 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK3B3->first_criterias = "C3";
+        $storeMatriksBerpasanganK3B3->intensitas_values = $request->k3b3;
+        $storeMatriksBerpasanganK3B3->second_criterias = "C3";
+        $storeMatriksBerpasanganK3B3->save();
+
+        $storeMatriksBerpasanganK3B4 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK3B4->first_criterias = "C4";
+        $storeMatriksBerpasanganK3B4->intensitas_values = $request->k3b4;
+        $storeMatriksBerpasanganK3B4->second_criterias = "C3";
+        $storeMatriksBerpasanganK3B4->save();
+
+
+
+        $storeMatriksBerpasanganK4B1 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK4B1->first_criterias = "C1";
+        $storeMatriksBerpasanganK4B1->intensitas_values = $request->k4b1;
+        $storeMatriksBerpasanganK4B1->second_criterias = "C4";
+        $storeMatriksBerpasanganK4B1->save();
+
+        $storeMatriksBerpasanganK4B2 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK4B2->first_criterias = "C2";
+        $storeMatriksBerpasanganK4B2->intensitas_values = $request->k4b2;
+        $storeMatriksBerpasanganK4B2->second_criterias = "C4";
+        $storeMatriksBerpasanganK4B2->save();
+
+        $storeMatriksBerpasanganK4B3 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK4B3->first_criterias = "C3";
+        $storeMatriksBerpasanganK4B3->intensitas_values = $request->k4b3;
+        $storeMatriksBerpasanganK4B3->second_criterias = "C4";
+        $storeMatriksBerpasanganK4B3->save();
+
+        $storeMatriksBerpasanganK4B4 = new ahp_analisa_criteria;
+        $storeMatriksBerpasanganK4B4->first_criterias = "C4";
+        $storeMatriksBerpasanganK4B4->intensitas_values = $request->k4b4;
+        $storeMatriksBerpasanganK4B4->second_criterias = "C4";
+        $storeMatriksBerpasanganK4B4->save();
+
+
         
         $storeBobotC1 = ahp_criteria::where('code_criterias', 'C1')->first();
         $storeBobotC1->bobot=$C1;
@@ -85,6 +190,8 @@ class AnalisaCriteriaController extends Controller
         $storeBobotC4 = ahp_criteria::where('code_criterias', 'C4')->first();
         $storeBobotC4->bobot=null;
         $storeBobotC4->save();
+
+        ahp_analisa_criteria::truncate();
 
         return redirect('/users/analisa-ahp/ahp-kriteria');
     }
