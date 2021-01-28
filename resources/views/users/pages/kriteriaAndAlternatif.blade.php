@@ -115,16 +115,6 @@
                         <div class="modal-body">
                           <form method="post" action="/users/kriteria/ubah/{{$c->id}}">
                             {{csrf_field()}}
-                              
-                              <div class="form-group">
-                                <label for="kode_kriteria">Kode Kriteria</label>
-                                <select name="kode_kriteria" class="form-control">
-                                <option>Pilih</option>
-                                @for($i=1; $i <= 4 ; $i++)
-                                <option>C{{$i}}</option>
-                                @endfor
-                              </select>
-                              </div>
                               <div class="form-group">
                                 <label for="nama_kriteria">Nama Kriteria</label>
                                 <input required="" autocomplete="off" type="text" class="form-control" id="nama_kriteria" name="nama_kriteria" value="{{$c->criteria_name}}">
