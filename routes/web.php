@@ -38,3 +38,8 @@ Route::post('users/analisa-ahp/ahp-kriteria/hitung-bobot', 'AnalisaCriteriaContr
 // ========================================================================================
 // Analisa Alternatif
 Route::get('users/analisa-ahp/ahp-alternatif', 'AnalisaAlternativeController@index');
+Route::get('users/analisa-ahp/ahp-alternatif/reset', 'AnalisaAlternativeController@resetNilaiAkhir');
+Route::post('users/analisa-ahp/ahp-alternatif/hitung-nilai-akhir', 'AnalisaAlternativeController@hitung_nilai_akhir');
+// =============================================================================================
+// Perangkingan
+Route::get('users/analisa-ahp/ahp-perangkingan', 'PerangkinganController@index');

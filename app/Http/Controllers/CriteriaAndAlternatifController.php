@@ -57,6 +57,7 @@ class CriteriaAndAlternatifController extends Controller
 
         $ahp_alternative = new ahp_alternative;
         $ahp_alternative->alternatives_id=$alternative->id;
+        $ahp_alternative->alternatives_code=$alternative->alternative_code;
         $ahp_alternative->save();
         return redirect('users/kriteria-alternatif');
     }
@@ -86,7 +87,6 @@ class CriteriaAndAlternatifController extends Controller
     public function alternatif_update(Request $request, $id)
     {
         $alternative = alternative::where('id', $id)->first();
-        $alternative->alternative_code=$request->kode_alternatif;
         $alternative->alternative_name=$request->nama_alternatif;
         $alternative->save();
         return redirect('users/kriteria-alternatif');

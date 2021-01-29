@@ -247,16 +247,6 @@
                         <div class="modal-body">
                           <form method="post" action="/users/alternatif/ubah/{{$a->id}}">
                             {{csrf_field()}}
-                              
-                              <div class="form-group">
-                                <label for="kode_alternatif">Kode Alternatif</label>
-                                <select name="kode_alternatif" class="form-control">
-                                <option>Pilih</option>
-                                @for($i=1; $i <= 7 ; $i++)
-                                <option>A{{$i}}</option>
-                                @endfor
-                              </select>
-                              </div>
                               <div class="form-group">
                                 <label for="nama_alternatif">Nama Alternatif</label>
                                 <input required="" autocomplete="off" type="text" class="form-control" id="nama_alternatif" name="nama_alternatif" value="{{$a->alternative_name}}">
