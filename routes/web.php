@@ -35,3 +35,6 @@ Route::get('users/alternatif/hapus/{id}', 'CriteriaAndAlternatifController@alter
 Route::get('users/analisa-ahp/ahp-kriteria', 'AnalisaCriteriaController@index');
 Route::get('users/analisa-ahp/ahp-kriteria/reset', 'AnalisaCriteriaController@resetBobot');
 Route::post('users/analisa-ahp/ahp-kriteria/hitung-bobot', 'AnalisaCriteriaController@hitungBobot');
+// ========================================================================================
+// Analisa Alternatif
+Route::get('users/analisa-ahp/ahp-alternatif', 'AnalisaAlternativeController@index');

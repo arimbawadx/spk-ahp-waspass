@@ -18,7 +18,7 @@
 
     <div class="box box-danger box-solid">
       <div class="box-header">
-        <h3 class="box-title">Kriteria</h3>
+        <h3 class="box-title">Analisa Kriteria</h3>
       </div>
       <!-- /.box-header -->
 
@@ -187,12 +187,14 @@
     } ?>;" class="alert alert-success alert-dismissible">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
       <h4><i class="icon fa fa-check"></i>Memenuhi syarat CR < 0,1</h4>
+      <br>
       𝜆𝑚𝑎𝑥 = {{$nmax}}
       <br>
       CI = {{$CI}}
       <br> 
       CR = {{$CR}}
-      <br> 
+      <br><br>
+      Karena rasio konsistensi (𝐶𝑅) kurang atau sama dengan 0,1 maka hasil perhitungan bisa dinyatakan benar atau dinyatakan konsisten. 
     </div>
     @else
     <div style="display:<?php if (!isset($analisaCriteria->first()->bobot)) {
