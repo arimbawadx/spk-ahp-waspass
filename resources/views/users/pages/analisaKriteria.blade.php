@@ -181,6 +181,7 @@
       Reset Bobot untuk menganalisa ulang!
     </div>
 
+    @isset($CR)
     @if($CR<0.1)
     <div style="display:<?php if (!isset($analisaCriteria->first()->bobot)) {
       echo "none";
@@ -210,6 +211,7 @@
       <br> 
     </div>
     @endif
+    @endisset
 
 
   </div>

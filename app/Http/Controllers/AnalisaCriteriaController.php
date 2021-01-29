@@ -81,10 +81,12 @@ class AnalisaCriteriaController extends Controller
         }
         
 
+        if (isset($nmax)) {
+            return view('users.pages.analisaKriteria', compact('analisaCriteria', 'nmax', 'CI', 'CR'));
+        }else{
+            return view('users.pages.analisaKriteria', compact('analisaCriteria'));
+        }
         
-
-
-        return view('users.pages.analisaKriteria', compact('analisaCriteria', 'nmax', 'CI', 'CR'));
     }
 
     /**

@@ -59,9 +59,11 @@
 
         <div class="box-body">
           <div class="table table-responsive">
+            @if($criteria->count()<4)
             <button style="margin-bottom: 5px" type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#TambahDataKriteria">
               <i class="fa fa-plus"></i><span> Tambah</span>
             </button>
+            @endif
 
             <table id="datatables" class="table table-bordered table-striped text-center">
               <thead>
@@ -191,9 +193,11 @@
 
         <div class="box-body">
           <div class="table table-responsive">
+            @if($alternative->count()<7)
             <button style="margin-bottom: 5px" type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#TambahDataAlternatif">
               <i class="fa fa-plus"></i><span> Tambah</span>
             </button>
+            @endif
 
             <table id="datatables" class="table table-bordered table-striped text-center">
               <thead>

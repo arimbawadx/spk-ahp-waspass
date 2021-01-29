@@ -7,6 +7,7 @@
 @section('content')
 
 <!-- Content Wrapper. Contains page content -->
+@isset($jumlahNilaiAkhirA1)
 <div class="row">
   <div class="col-md-6">
     <div align="center" id="columnchart_perangkinganAHP"></div>
@@ -115,7 +116,14 @@
   </div>
 
 </div>
-
+@endisset
+<div style="display: <?php if (isset($jumlahNilaiAkhirA1)) {
+  echo "none;";
+} ?>" class="alert alert-danger alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <h4><i class="icon fa fa-close"></i>Tidak Ada Perangkingan</h4>
+  Analisa Kriteria dan Perangkingan terlebih dahulu untuk mendapatkan perangkingan. 
+</div>
 <script type="text/javascript" src="{{asset('lte/dist/js/analisa.js')}}"></script>
 <!-- /.content-wrapper -->
 @endsection
